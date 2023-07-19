@@ -31,6 +31,11 @@ section {
     color: #161616;
 }
 
+ul {
+    padding: 0;
+    list-style: none;
+}
+
 #root {
     background-color: #fff7ed;
 }
@@ -152,6 +157,138 @@ section {
 .hint__button {
     margin-top: 25px;
     padding: 10px 22px;
+    background-color: #161616;
+}
+
+/* ! VANS */
+
+.vans__header {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+.vans__filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter__container {
+    display: flex;
+    gap: 20px;
+}
+
+.filter__item {
+    padding: 6px 26px 7px 26px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    color: #4d4d4d;
+    background-color: #ffead0;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    -webkit-transition: color 0.3s ease, background-color 0.3s ease;
+    -moz-transition: color 0.3s ease, background-color 0.3s ease;
+    -ms-transition: color 0.3s ease, background-color 0.3s ease;
+    -o-transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.filter__item:hover {
+    color: #ffead0;
+}
+
+.filter_simple:hover {
+    background-color: #e17654;
+}
+
+.filter_luxury:hover {
+    background-color: #161616;
+}
+.filter_rugged:hover {
+    background-color: #115e59;
+}
+
+.filter__button {
+    color: #4d4d4d;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.vans__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 34px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.vans__card {
+    width: fit-content;
+}
+
+.card__image {
+    width: 230px;
+    height: 230px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.card__info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.card__price {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.price__span {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    text-align: right;
+}
+
+.card__type {
+    padding: 3px 14px;
+    width: fit-content;
+    background-color: #c4c4c4;
+    color: #ffead0;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 32px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.simple {
+    background-color: #e17654;
+}
+
+.rugged {
+    background-color: #115e59;
+}
+
+.luxury {
     background-color: #161616;
 }
 
