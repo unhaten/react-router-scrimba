@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Vans from "../pages/vans/Vans";
+import VanDetails from "../pages/vans/van-details/VanDetails";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
@@ -36,6 +37,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/vans" element={<Vans vans={vans} />} />
+                    <Route path="/vans/:id" element={<VanDetails />} />
                 </Routes>
             </main>
             <Footer></Footer>

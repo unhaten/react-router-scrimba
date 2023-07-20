@@ -5,6 +5,7 @@ const Vans = ({ vans }) => {
         return (
             <VanCard
                 key={van.id}
+                id={van.id}
                 description={van.description}
                 image={van.imageUrl}
                 name={van.name}
