@@ -1,43 +1,39 @@
 import { NavLink } from "react-router-dom";
-import logo from "./../assets/logo.png";
 
-const Nav = () => {
+const HostVanDetailsNav = () => {
     const highlighted = {
         fontWeight: "bold",
         textDecoration: "underline",
         color: "#161616",
     };
-
     return (
-        <nav className="nav">
-            <NavLink to={"/"}>
-                <img src={logo} alt="logo" className="nav__logo" />
-            </NavLink>
-            <div className="nav__links">
+        <nav className="host-details__nav">
+            <div className="nav__links host-details__links">
                 <NavLink
                     className="nav__link"
-                    to={"host"}
+                    to={"."}
+                    end
                     style={({ isActive }) => (isActive ? highlighted : null)}
                 >
-                    Host
+                    Details
                 </NavLink>
                 <NavLink
                     className="nav__link"
-                    to={"about"}
+                    to={"pricing"}
                     style={({ isActive }) => (isActive ? highlighted : null)}
                 >
-                    About
+                    Pricing
                 </NavLink>
                 <NavLink
                     className="nav__link"
-                    to={"vans"}
+                    to={"photos"}
                     style={({ isActive }) => (isActive ? highlighted : null)}
                 >
-                    Vans
+                    Photos
                 </NavLink>
             </div>
         </nav>
     );
 };
 
-export default Nav;
+export default HostVanDetailsNav;

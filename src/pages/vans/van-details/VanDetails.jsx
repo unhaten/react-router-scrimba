@@ -5,7 +5,7 @@ import Loading from "../../../components/Loading";
 const VanDetails = () => {
     const { id } = useParams();
     const [van, setVan] = useState(null);
-    const [loading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
     const fetchDetailedData = async () => {
         try {
@@ -26,11 +26,7 @@ const VanDetails = () => {
 
     return (
         <>
-            {loading && (
-                <div className="loading__container">
-                    <Loading />
-                </div>
-            )}
+            {isLoading && <Loading />}
             {van && (
                 <section className="section__details">
                     <div className="details__back">

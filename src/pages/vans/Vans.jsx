@@ -16,7 +16,9 @@ const Vans = ({ vans }) => {
     });
     return (
         <section className="section__vans">
-            <h2 className="vans__header">Explore our van options</h2>
+            <h2 className="vans__header section__header">
+                Explore our van options
+            </h2>
             <ul className="vans__filter">
                 <div className="filter__container">
                     <li className="filter__item filter_simple">Simple</li>

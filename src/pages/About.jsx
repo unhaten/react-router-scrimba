@@ -6,7 +6,7 @@ const About = () => {
         <>
             <img src={aboutImg} alt="about-image" className="about__image" />
             <section className="section__about">
-                <h2 className="about__header">
+                <h2 className="about__header section__header">
                     Don’t squeeze in a sedan when you could relax in a van.
                 </h2>
                 <p className="about__text">
