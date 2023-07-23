@@ -12,11 +12,12 @@ import HostVanDetails from "../pages/host/host-vans/host-van-details/HostVanDeta
 import HostVanInfo from "../pages/host/host-vans/host-van-details/host-van-info/HostVanInfo";
 import HostVanPhotos from "../pages/host/host-vans/host-van-details/host-van-photos/HostVanPhotos";
 import HostVanPricing from "../pages/host/host-vans/host-van-details/host-van-pricing/HostVanPricing";
+import NotFound from "../pages/error/NotFound";
 
 import "./../server.js";
 import Layout from "./layouts/Layout";
 import HostLayout from "./layouts/HostLayout";
-import HostVanDetailsLayout from "./layouts/HostVanDetailsLayout";
+// import HostVanDetailsLayout from "./layouts/HostVanDetailsLayout";
 
 const App = () => {
     const [vans, setVans] = useState([]);
@@ -60,6 +61,7 @@ const App = () => {
                             ></Route>
                         </Route>
                     </Route>
+                    <Route path="*" element={<NotFound />}></Route>
                 </Route>
             </Routes>
         </BrowserRouter>

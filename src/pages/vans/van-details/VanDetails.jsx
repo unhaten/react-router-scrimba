@@ -1,11 +1,16 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loading from "../../../components/Loading";
 
 const VanDetails = () => {
     const { id } = useParams();
+    const location = useLocation();
     const [van, setVan] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    // console.log(location.state);
+
+    const search = location.state?.search || "";
+    const type = location.state?.type || "all";
 
     const fetchDetailedData = async () => {
         try {
@@ -43,8 +48,12 @@ const VanDetails = () => {
                                 fill="#858585"
                             />
                         </svg>
-                        <Link to="/vans" className="back__link">
-                            Back to all vans
+                        <Link
+                            to={`..${search}`}
+                            relative="path"
+                            className="back__link"
+                        >
+                            Back to {type} vans
                         </Link>
                     </div>
                     <img src={van.imageUrl} alt="" className="details__image" />

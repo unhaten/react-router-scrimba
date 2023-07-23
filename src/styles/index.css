@@ -203,15 +203,22 @@ ul {
     color: #ffead0;
 }
 
-.filter_simple:hover {
+.filter_simple:hover,
+.filter_simple.selected {
     background-color: #e17654;
 }
 
-.filter_luxury:hover {
+.filter_luxury:hover,
+.filter_luxury.selected {
     background-color: #161616;
 }
-.filter_rugged:hover {
+.filter_rugged:hover,
+.filter_rugged.selected {
     background-color: #115e59;
+}
+
+.selected {
+    color: #ffead0;
 }
 
 .filter__button {
@@ -234,6 +241,10 @@ ul {
     width: fit-content;
 }
 
+.vans__card:hover .card__image {
+    box-shadow: 0px 0px 6px 4px #cdcdcd;
+}
+
 .card__image {
     width: 230px;
     height: 230px;
@@ -242,6 +253,11 @@ ul {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+    -webkit-transition: box-shadow 0.3s ease;
+    -moz-transition: box-shadow 0.3s ease;
+    -ms-transition: box-shadow 0.3s ease;
+    -o-transition: box-shadow 0.3s ease;
 }
 
 .card__info {
@@ -383,6 +399,18 @@ ul {
     -o-border-radius: 6px;
 }
 
+.host-vans__card {
+    transition: box-shadow 0.3s ease;
+    -webkit-transition: box-shadow 0.3s ease;
+    -moz-transition: box-shadow 0.3s ease;
+    -ms-transition: box-shadow 0.3s ease;
+    -o-transition: box-shadow 0.3s ease;
+}
+
+.host-vans__card:hover {
+    box-shadow: 0px 0px 6px 1px #cdcdcd;
+}
+
 .host-vans__card:first-child {
     margin-top: 32px;
 }
@@ -500,6 +528,19 @@ ul {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+}
+
+/* ! NOT FOUND */
+
+.section__not-found {
+    margin-top: 100px;
+}
+
+.not-found__button {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #161616;
+    border-radius: 4.983px;
 }
 
 /* ! FOOTER */

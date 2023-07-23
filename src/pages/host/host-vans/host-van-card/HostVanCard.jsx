@@ -4,7 +4,7 @@ const HostVanCard = ({ name, image, price, id }) => {
     return (
         <>
             <li className="host-vans__card">
-                <Link to={`/host/vans/${id}`} className="host-vans__link">
+                <Link to={id} className="host-vans__link">
                     <img
                         src={image}
                         alt="host-van-image"

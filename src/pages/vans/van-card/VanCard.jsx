@@ -1,9 +1,19 @@
 import { Link } from "react-router-dom";
 
-const VanCard = ({ description, image, name, type, price, id }) => {
-
+const VanCard = ({
+    image,
+    name,
+    type,
+    price,
+    id,
+    searchParams,
+    typeFilter,
+}) => {
     return (
-        <Link to={`/vans/${id}`}>
+        <Link
+            to={id}
+            state={{ search: `?${searchParams.toString()}`, type: typeFilter }}
+        >
             <li className="vans__card">
                 <img src={image} alt="van-image" className="card__image" />
                 <div className="card__info">
