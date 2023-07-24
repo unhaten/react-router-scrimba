@@ -81,7 +81,24 @@ ul {
 
 .nav__links {
     display: flex;
+    align-items: center;
     gap: 12px;
+}
+
+.user-icon path {
+    transition: stroke 0.3s ease;
+    -webkit-transition: stroke 0.3s ease;
+    -moz-transition: stroke 0.3s ease;
+    -ms-transition: stroke 0.3s ease;
+    -o-transition: stroke 0.3s ease;
+}
+
+.user-icon:hover path {
+    stroke: #ff8c38;
+}
+
+.user-icon_active path {
+    stroke: #ff8c38;
 }
 
 .nav__link {
@@ -541,6 +558,46 @@ ul {
     width: 100%;
     background-color: #161616;
     border-radius: 4.983px;
+}
+
+/* ! LOGIN */
+
+.login__header {
+    margin-top: 95px;
+    text-align: center;
+}
+
+.login__form {
+    margin-top: 50px;
+}
+
+.login__input {
+    padding: 9px 13px;
+    width: calc(100% - 26px);
+    background: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    border: 1px solid #0000000d;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.login__input:placeholder {
+    color: #4d4d4d;
+}
+
+.login__password {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.login__button {
+    margin-top: 22px;
+    width: 100%;
+}
+
+.login__text {
+    margin-top: 45px;
+    text-align: center;
+    line-height: 24px;
 }
 
 /* ! FOOTER */
