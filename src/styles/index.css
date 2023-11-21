@@ -59,6 +59,15 @@ ul {
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #dd7124;
 }
 
 .section__header {
@@ -147,6 +156,11 @@ ul {
 .home__button {
     margin-top: 50px;
     width: 100%;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
 }
 
 /* ! ABOUT */
@@ -186,6 +200,15 @@ ul {
     margin-top: 25px;
     padding: 10px 22px;
     background-color: #161616;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+}
+
+.hint__button:hover {
+    background-color: #3e3e3e;
 }
 
 /* ! VANS */
@@ -567,6 +590,13 @@ ul {
     text-align: center;
 }
 
+.login__warning {
+    display: block;
+    margin-top: 22px;
+    color: red;
+    text-align: center;
+}
+
 .login__form {
     margin-top: 50px;
 }
@@ -592,6 +622,10 @@ ul {
 .login__button {
     margin-top: 22px;
     width: 100%;
+}
+
+.login__button:disabled {
+    background-color: #e175549f;
 }
 
 .login__text {

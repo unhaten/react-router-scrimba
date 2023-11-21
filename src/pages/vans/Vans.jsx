@@ -1,18 +1,12 @@
 import VanCard from "./van-card/VanCard";
-import Loading from "../../components/Loading";
 import { useSearchParams, useLoaderData } from "react-router-dom";
 
-import { getVans } from "../../api";
 
-export function loader() {
-    return getVans();
-}
-
-const Vans = ({ isLoading, error }) => {
+const Vans = () => {
     const [searchParams, setSearchParams] = useSearchParams();
 
     const vans = useLoaderData();
-    console.log(vans);
+    // console.log(vans);
 
     const typeFilter = searchParams.get("type");
 
@@ -49,63 +43,53 @@ const Vans = ({ isLoading, error }) => {
 
     return (
         <>
-            {error ? (
-                <h1>Could not get data</h1>
-            ) : (
-                <section className="section__vans">
-                    <h2 className="vans__header section__header">
-                        Explore our van options
-                    </h2>
-                    <ul className="vans__filter">
-                        <div className="filter__container">
-                            <li
-                                className={`filter__item filter_simple ${
-                                    typeFilter === "simple" ? "selected" : ""
-                                }`}
-                                // * you can also do this => onClick={() => setSearchParams({ type: "simple" })} / but it is worse if we need couple of parameters
-                                onClick={() =>
-                                    handleFilterChange("type", "simple")
-                                }
-                            >
-                                Simple
-                            </li>
-                            <li
-                                className={
-                                    typeFilter === "luxury"
-                                        ? `selected filter__item filter_luxury`
-                                        : "filter__item filter_luxury"
-                                }
-                                onClick={() =>
-                                    handleFilterChange("type", "luxury")
-                                }
-                            >
-                                Luxury
-                            </li>
-                            <li
-                                className={
-                                    typeFilter === "rugged"
-                                        ? `selected filter__item filter_rugged`
-                                        : "filter__item filter_rugged"
-                                }
-                                onClick={() =>
-                                    handleFilterChange("type", "rugged")
-                                }
-                            >
-                                Rugged
-                            </li>
-                        </div>
-                        {typeFilter ? (
-                            <button
-                                className="filter__button"
-                                onClick={() => handleFilterChange("type", null)}
-                            >
-                                Clear filters
-                            </button>
-                        ) : null}
-                    </ul>
-                    <ul className="vans__list">{vanElements}</ul>
-                </section>
-            )}
+            <section className="section__vans">
+                <h2 className="vans__header section__header">
+                    Explore our van options
+                </h2>
+                <ul className="vans__filter">
+                    <div className="filter__container">
+                        <li
+                            className={`filter__item filter_simple ${
+                                typeFilter === "simple" ? "selected" : ""
+                            }`}
+                            // * you can also do this => onClick={() => setSearchParams({ type: "simple" })} / but it is worse if we need couple of parameters
+                            onClick={() => handleFilterChange("type", "simple")}
+                        >
+                            Simple
+                        </li>
+                        <li
+                            className={
+                                typeFilter === "luxury"
+                                    ? `selected filter__item filter_luxury`
+                                    : "filter__item filter_luxury"
+                            }
+                            onClick={() => handleFilterChange("type", "luxury")}
+                        >
+                            Luxury
+                        </li>
+                        <li
+                            className={
+                                typeFilter === "rugged"
+                                    ? `selected filter__item filter_rugged`
+                                    : "filter__item filter_rugged"
+                            }
+                            onClick={() => handleFilterChange("type", "rugged")}
+                        >
+                            Rugged
+                        </li>
+                    </div>
+                    {typeFilter ? (
+                        <button
+                            className="filter__button"
+                            onClick={() => handleFilterChange("type", null)}
+                        >
+                            Clear filters
+                        </button>
+                    ) : null}
+                </ul>
+                <ul className="vans__list">{vanElements}</ul>
+            </section>
         </>
     );
 };

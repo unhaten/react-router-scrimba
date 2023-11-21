@@ -1,24 +1,29 @@
-import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import HostVanCard from "./host-van-card/HostVanCard";
-import Loading from "../../../components/Loading";
+import { getHostVans } from "../../../api";
+import { requireAuth } from "../../../utils/requireAuth";
+
+
+
 
 const HostVans = () => {
-    const [hostVan, setHostVan] = useState([]);
+    // const [hostVan, setHostVan] = useState([]);
+    const hostVan = useLoaderData();
 
-    const fetchHostVanData = async () => {
-        try {
-            const response = await fetch("/api/host/vans");
-            const data = await response.json();
-            setHostVan(data.vans);
-            // console.log(data.vans);
-        } catch (e) {
-            console.log(e);
-        }
-    };
+    // const fetchHostVanData = async () => {
+    //     try {
+    //         const response = await fetch("/api/host/vans");
+    //         const data = await response.json();
+    //         setHostVan(data.vans);
+    //         // console.log(data.vans);
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // };
 
-    useEffect(() => {
-        fetchHostVanData();
-    }, []);
+    // useEffect(() => {
+    //     fetchHostVanData();
+    // }, []);
 
     const vanCards = hostVan.map((van) => (
         <HostVanCard
@@ -35,7 +40,8 @@ const HostVans = () => {
             <section className="section__host-vans">
                 <h2 className="section__header">Your listed vans</h2>
                 <ul className="host-vans__list">
-                    {hostVan.length > 0 ? vanCards : <Loading />}
+                    {/* {hostVan.length > 0 ? vanCards : <Loading />} */}
+                    {vanCards}
                 </ul>
             </section>
         </>

@@ -5,7 +5,7 @@ export default function Error() {
 
     return (
         <section className="section__error">
-            <h1>An error occured: {error.message}</h1>
+            <h1>An error occurred: {error.message}</h1>
             <pre>
                 {error.status} - {error.statusText}
             </pre>

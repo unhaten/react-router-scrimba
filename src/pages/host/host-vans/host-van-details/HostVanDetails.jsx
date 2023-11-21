@@ -1,24 +1,26 @@
-import { useEffect, useState } from "react";
-import { useParams, Link, Outlet } from "react-router-dom";
-import Loading from "../../../../components/Loading";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 import HostVanDetailsNav from "./HostVanDetailsNav";
+import { getHostVans } from "../../../../api";
+import { requireAuth } from "../../../../utils/requireAuth";
+
+
 
 const HostVanDetails = () => {
-    const { id } = useParams();
+    // const { id } = useParams();
+    const currentVan = useLoaderData();
 
-    const [currentVan, setCurrentVan] = useState(null);
+    // const [currentVan, setCurrentVan] = useState(null);
 
-    const fetchHostVanDetails = async () => {
-        const response = await fetch(`/api/host/vans/${id}`);
-        const data = await response.json();
-        // console.log(data.vans);
-        setCurrentVan(data.vans);
-    };
+    // const fetchHostVanDetails = async () => {
+    //     const response = await fetch(`/api/host/vans/${id}`);
+    //     const data = await response.json();
+    //     // console.log(data.vans);
+    //     setCurrentVan(data.vans);
+    // };
 
-    useEffect(() => {
-        fetchHostVanDetails();
-        //eslint-disable-next-line
-    }, []);
+    // useEffect(() => {
+    //     fetchHostVanDetails();
+    // }, []);
 
     // const hostVanDetailsEl = HostVanDetails.map()
 
@@ -43,41 +45,37 @@ const HostVanDetails = () => {
                         Back to all vans
                     </Link>
                 </div>
-                {currentVan ? (
-                    <>
-                        <div className="host-details__container">
-                            <div className="host-details__content">
-                                <img
-                                    src={currentVan.imageUrl}
-                                    alt="host-details-image"
-                                    className="host-details__image"
-                                />
-                                <div className="host-details__info">
-                                    <div
-                                        className={`card__type ${currentVan.type}`}
-                                    >
-                                        {currentVan.type}
-                                    </div>
-                                    <h2 className="host-details__name">
-                                        {currentVan.name}
-                                    </h2>
-                                    <p className="host-details__price">
-                                        ${currentVan.price}
-                                        <span className="price__span_host">
-                                            /day
-                                        </span>
-                                    </p>
+                <>
+                    <div className="host-details__container">
+                        <div className="host-details__content">
+                            <img
+                                src={currentVan.imageUrl}
+                                alt="host-details-image"
+                                className="host-details__image"
+                            />
+                            <div className="host-details__info">
+                                <div
+                                    className={`card__type ${currentVan.type}`}
+                                >
+                                    {currentVan.type}
                                 </div>
-                            </div>
-                            <HostVanDetailsNav></HostVanDetailsNav>
-                            <div className="host-details__explicit">
-                                <Outlet context={{ currentVan }}></Outlet>
+                                <h2 className="host-details__name">
+                                    {currentVan.name}
+                                </h2>
+                                <p className="host-details__price">
+                                    ${currentVan.price}
+                                    <span className="price__span_host">
+                                        /day
+                                    </span>
+                                </p>
                             </div>
                         </div>
-                    </>
-                ) : (
-                    <Loading></Loading>
-                )}
+                        <HostVanDetailsNav></HostVanDetailsNav>
+                        <div className="host-details__explicit">
+                            <Outlet context={{ currentVan }}></Outlet>
+                        </div>
+                    </div>
+                </>
             </section>
         </>
     );

@@ -1,13 +1,8 @@
 import { Link } from "react-router-dom";
 
 const VanCard = ({
-    image,
-    name,
-    type,
-    price,
-    id,
-    searchParams,
-    typeFilter,
+    // eslint-disable-next-line
+    image, name, type, price, id, searchParams, typeFilter,
 }) => {
     return (
         <Link
